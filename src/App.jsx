@@ -1,25 +1,23 @@
+import About from "./components/About";
+import Carrosel from "./components/Carrosel";
 import Nav from "./components/Nav";
 
 
 function App() {
   return (
     <div>
-      <Nav/>
+      <Nav />
       <main>
-        <section
-          id="inicio"
-          className="h-screen bg-blue-500 flex items-center justify-center"
-        >
-          <h1 className="text-white text-4xl">Bem-vindo ao Início</h1>
+        <section id="inicio">
+          <Carrosel />
         </section>
         <section
           id="quem-somos"
-          className="h-screen bg-green-500 flex items-center justify-center"
         >
-          <h1 className="text-white text-4xl">Quem Somos</h1>
+          <About/>
         </section>
         <section
-          id="nossos-servicos"
+          id="servicos"
           className="h-screen bg-red-500 flex items-center justify-center"
         >
           <h1 className="text-white text-4xl">Nossos Serviços</h1>
@@ -29,12 +27,6 @@ function App() {
           className="h-screen bg-yellow-500 flex items-center justify-center"
         >
           <h1 className="text-white text-4xl">Modelos de Contrato</h1>
-        </section>
-        <section
-          id="parceiros"
-          className="h-screen bg-purple-500 flex items-center justify-center"
-        >
-          <h1 className="text-white text-4xl">Parceiros</h1>
         </section>
         <section
           id="contato"

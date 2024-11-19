@@ -10,9 +10,9 @@ function Nav() {
   };
 
   return (
-    <header className="sticky top-0 z-20 mx-auto flex w-full items-center justify-between bg-blue-950 border-b border-gray-500 p-4 sm:p-8">
+    <header className="sticky top-0 z-20 mx-auto flex w-full items-center justify-between bg-white border-b border-gray-500 p-3 sm:p-8 shadow">
       <div className="flex items-center justify-between w-full">
-        <h1 className="font-serif text-2xl sm:text-3xl text-yellow-500">
+        <h1 className="font-serif text-2xl sm:text-3xl text-slate-500">
           FGT Despachante
         </h1>
 
@@ -34,13 +34,12 @@ function Nav() {
         {/* Menu Mobile */}
         {isOpen && (
           <div className="md:hidden bg-white shadow-md py-4">
-            <ul className="flex flex-col items-center space-y-4 text-white">
+            <ul className="flex flex-col items-center space-y-4 text-slate-500">
               {[
                 { to: "inicio", label: "Início" },
                 { to: "quem-somos", label: "Quem Somos" },
-                { to: "nossos-servicos", label: "Nossos Serviços" },
+                { to: "servicos", label: "Serviços" },
                 { to: "contratos", label: "Contratos" },
-                { to: "parceiros", label: "Parceiros" },
                 { to: "contato", label: "Contato" },
                 { to: "localizacao", label: "Localização" },
               ].map(({ to, label }) => (
@@ -61,13 +60,12 @@ function Nav() {
         )}
 
         {/* Menu Desktop */}
-        <ul className="hidden md:flex md:items-center md:space-x-10 text-white">
+        <ul className="hidden md:flex md:items-center md:space-x-10 text-slate-500">
           {[
             { to: "inicio", label: "Início" },
             { to: "quem-somos", label: "Quem Somos" },
-            { to: "nossos-servicos", label: "Nossos Serviços" },
+            { to: "servicos", label: "Serviços" },
             { to: "contratos", label: "Contratos" },
-            { to: "parceiros", label: "Parceiros" },
             { to: "contato", label: "Contato" },
             { to: "localizacao", label: "Localização" },
           ].map(({ to, label }) => (
@@ -76,7 +74,7 @@ function Nav() {
                 to={to}
                 smooth={true}
                 duration={500}
-                className="cursor-pointer hover:text-blue-500"
+                className="cursor-pointer text-1xl"
               >
                 {label}
               </Link>
