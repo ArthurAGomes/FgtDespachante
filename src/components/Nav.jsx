@@ -12,7 +12,7 @@ function Nav() {
   return (
     <header className="sticky top-0 z-20 mx-auto flex w-full items-center justify-between bg-white border-b border-gray-500 p-3 sm:p-8 shadow">
       <div className="flex items-center justify-between w-full">
-        <h1 className="font-serif text-2xl sm:text-3xl text-slate-500">
+        <h1 className="font-serif text-2xl sm:text-3xl text-gray-800">
           FGT Despachante
         </h1>
 
@@ -34,52 +34,145 @@ function Nav() {
         {/* Menu Mobile */}
         {isOpen && (
           <div className="md:hidden bg-white shadow-md py-4">
-            <ul className="flex flex-col items-center space-y-4 text-slate-500">
-              {[
-                { to: "inicio", label: "Início" },
-                { to: "quem-somos", label: "Quem Somos" },
-                { to: "servicos", label: "Serviços" },
-                { to: "contratos", label: "Contratos" },
-                { to: "contato", label: "Contato" },
-                { to: "localizacao", label: "Localização" },
-              ].map(({ to, label }) => (
-                <li key={to}>
-                  <Link
-                    to={to}
-                    smooth={true}
-                    duration={500}
-                    className="cursor-pointer hover:text-blue-500"
-                    onClick={toggleMenu} // Fecha o menu ao clicar no link
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
+            <ul className="flex flex-col items-center w-full text-gray-800">
+              <li>
+                <Link
+                  to="inicio"
+                  smooth={true}
+                  duration={500}
+                  className="cursor-pointer hover:text-blue-500"
+                  onClick={toggleMenu}
+                >
+                  Início
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="quem-somos"
+                  smooth={true}
+                  duration={500}
+                  className="cursor-pointer hover:text-blue-500"
+                  onClick={toggleMenu}
+                >
+                  Quem Somos
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="servicos"
+                  smooth={true}
+                  duration={500}
+                  className="cursor-pointer hover:text-blue-500"
+                  onClick={toggleMenu}
+                >
+                  Serviços
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="contratos"
+                  smooth={true}
+                  duration={500}
+                  className="cursor-pointer hover:text-blue-500"
+                  onClick={toggleMenu}
+                >
+                  Contratos
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="contato"
+                  smooth={true}
+                  duration={500}
+                  className="cursor-pointer hover:text-blue-500"
+                  onClick={toggleMenu}
+                >
+                  Contato
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="localizacao"
+                  smooth={true}
+                  duration={500}
+                  className="cursor-pointer hover:text-blue-500"
+                  onClick={toggleMenu}
+                >
+                  Localização
+                </Link>
+              </li>
             </ul>
           </div>
         )}
 
         {/* Menu Desktop */}
-        <ul className="hidden md:flex md:items-center md:space-x-10 text-slate-500">
-          {[
-            { to: "inicio", label: "Início" },
-            { to: "quem-somos", label: "Quem Somos" },
-            { to: "servicos", label: "Serviços" },
-            { to: "contratos", label: "Contratos" },
-            { to: "contato", label: "Contato" },
-            { to: "localizacao", label: "Localização" },
-          ].map(({ to, label }) => (
-            <li key={to}>
-              <Link
-                to={to}
-                smooth={true}
-                duration={500}
-                className="cursor-pointer text-1xl"
-              >
-                {label}
-              </Link>
-            </li>
-          ))}
+        <ul className="hidden md:flex md:items-center md:space-x-10 text-gray-800 ">
+          <li>
+            <Link
+              to="inicio"
+              offset={-100}
+              smooth={true}
+              duration={500}
+              className="cursor-pointer text-1xl"
+            >
+              Início
+            </Link>
+          </li>
+          <li className="w-[100px]">
+            <Link
+              to="quem-somos"
+              offset={-100}
+              smooth={true}
+              duration={500}
+              className="cursor-pointer text-1xl"
+            >
+              Quem Somos
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="servicos"
+              offset={-100}
+              smooth={true}
+              duration={500}
+              className="cursor-pointer text-1xl"
+            >
+              Serviços
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="contratos"
+              offset={-100}
+              smooth={true}
+              duration={500}
+              className="cursor-pointer text-1xl"
+            >
+              Contratos
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="contato"
+              offset={-100}
+              smooth={true}
+              duration={500}
+              className="cursor-pointer text-1xl"
+            >
+              Contato
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="localizacao"
+              offset={-100}
+              smooth={true}
+              duration={500}
+              className="cursor-pointer text-1xl"
+            >
+              Localização
+            </Link>
+          </li>
         </ul>
       </div>
     </header>
