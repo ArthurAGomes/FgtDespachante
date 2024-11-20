@@ -1,6 +1,8 @@
 import About from "./components/About";
 import Carrosel from "./components/Carrosel";
+import Contratos from "./components/Contratos";
 import Nav from "./components/Nav";
+import Servicos from "./components/Servicos";
 
 
 function App() {
@@ -18,15 +20,13 @@ function App() {
         </section>
         <section
           id="servicos"
-          className="h-screen bg-red-500 flex items-center justify-center"
         >
-          <h1 className="text-white text-4xl">Nossos Serviços</h1>
+          <Servicos/>
         </section>
         <section
           id="contratos"
-          className="h-screen bg-yellow-500 flex items-center justify-center"
         >
-          <h1 className="text-white text-4xl">Modelos de Contrato</h1>
+          <Contratos/>
         </section>
         <section
           id="contato"
