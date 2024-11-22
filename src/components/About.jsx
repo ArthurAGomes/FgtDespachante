@@ -52,11 +52,7 @@ function About() {
           </p>
 
           {/* Botões de Ação */}
-          <div className="flex flex-wrap gap-4">
-            <button className="flex items-center gap-2 px-6 py-3 bg-customOrange text-white font-semibold rounded-lg shadow-lg hover:bg-orange-500 transition-colors duration-300">
-              <Phone className="w-5 h-5" />
-              Saiba Mais
-            </button>
+          <div className="flex items-end justify-end">
             <a
               href="https://wa.me/559999999999" // Substitua pelo número correto
               target="_blank"
