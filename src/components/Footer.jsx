@@ -14,7 +14,7 @@ function Footer() {
         <div className="flex space-x-6 mb-4 md:mb-0">
           {/* Instagram */}
           <a
-            href="https://www.instagram.com/suaempresa"
+            href="https://www.instagram.com/fgtdespachante/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-customOrange transition"
@@ -23,7 +23,7 @@ function Footer() {
           </a>
           {/* Facebook */}
           <a
-            href="https://www.facebook.com/suaempresa"
+            href="https://www.facebook.com/FGTDESPACHANTE/?locale=pt_BR"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-customOrange transition"

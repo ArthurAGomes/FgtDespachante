@@ -11,7 +11,7 @@ import imagem3 from "../assets/img/banner3.jpg";
 function Carrosel() {
   const textos = [
     {
-      titulo: "Renovação de CNH",
+      titulo: "Licenciamento em dia",
       descricao: "Agilidade e eficiência para manter sua habilitação em dia.",
     },
     {
