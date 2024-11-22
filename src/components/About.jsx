@@ -1,57 +1,67 @@
 import aboutImg from "../assets/img/about-img.png";
+import { Phone, MessageCircle } from "lucide-react";
 
 function About() {
   return (
-    <div className="w-full h-full  py-16 px-5 flex flex-col md:flex-row items-center justify-center space-y-10 md:space-y-0 md:space-x-12">
-      {/* Image Section */}
-      <div className="w-full md:w-1/2 flex justify-center relative">
-        <img
-          src={aboutImg}
-          alt="Sobre nós"
-          className="rounded-lg hover:scale-105 transition-transform duration-300 ease-in-out"
-        />
-        <div className="absolute top-0 left-0 w-full h-full   rounded-lg -z-10"></div>
-      </div>
+    <section className="w-full py-16 px-5 bg-white">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12">
+        {/* Imagem */}
+        <div className="w-full md:w-1/2 flex justify-center relative">
+          <img
+            src={aboutImg}
+            alt="Sobre nós"
+            className="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out"
+          />
+          <div className="absolute inset-0 bg-customOrange opacity-10 rounded-lg -z-10"></div>
+        </div>
 
-      {/* Content Section */}
-      <div className="w-full md:w-1/2 text-gray-800 space-y-6">
-        {/* Title */}
-        <h1 className="text-4xl font-thin border-b-4 border-blue-500 inline-block pb-2">
-          Quem Somos
-        </h1>
+        {/* Conteúdo */}
+        <div className="w-full md:w-1/2 text-gray-800 space-y-6">
+          {/* Título */}
+          <h1 className="text-4xl font-thin border-b-4 border-customOrange inline-block pb-2">
+            Quem Somos
+          </h1>
 
-        {/* Subtitle */}
-        <h2 className="text-2xl  text-gray-800 font-thin">
-          Criamos Soluções que Inspiram
-        </h2>
+          {/* Subtítulo */}
+          <h2 className="text-2xl font-thin text-gray-800">
+            Criamos Soluções que Inspiram
+          </h2>
 
-        {/* Description */}
-        <p className="text-lg leading-relaxed text-gray-800">
-          Nossa missão é transformar ideias em realidade através de soluções
-          criativas e inovadoras. Com uma equipe apaixonada, entregamos
-          excelência em cada projeto, sempre priorizando as necessidades dos
-          nossos clientes e buscando impactar positivamente suas vidas e
-          negócios.
-        </p>
+          {/* Descrição */}
+          <p className="text-lg leading-relaxed text-gray-800">
+            Nossa missão é transformar ideias em realidade através de soluções
+            criativas e inovadoras. Com uma equipe apaixonada, entregamos
+            excelência em cada projeto, sempre priorizando as necessidades dos
+            nossos clientes e buscando impactar positivamente suas vidas e
+            negócios.
+          </p>
 
-        {/* Additional Information */}
-        <p className="text-lg leading-relaxed text-gray-800">
-          Seja você um pequeno empreendedor ou uma grande organização, estamos
-          aqui para oferecer serviços personalizados que geram resultados
-          duradouros. Junte-se a nós e faça parte de uma história de sucesso.
-        </p>
+          {/* Informações Adicionais */}
+          <p className="text-lg leading-relaxed text-gray-800">
+            Seja você um pequeno empreendedor ou uma grande organização, estamos
+            aqui para oferecer serviços personalizados que geram resultados
+            duradouros. Junte-se a nós e faça parte de uma história de sucesso.
+          </p>
 
-        {/* Call to Action */}
-        <div className="flex space-x-4">
-          <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-300">
-            Saiba Mais
-          </button>
-          <button className="px-6 py-3 bg-transparent border border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-600 hover:text-white transition-colors duration-300">
-            Fale Conosco
-          </button>
+          {/* Botões de Ação */}
+          <div className="flex flex-wrap gap-4">
+            <button className="flex items-center gap-2 px-6 py-3 bg-customOrange text-white font-semibold rounded-lg shadow-lg hover:bg-orange-500 transition-colors duration-300">
+              <Phone className="w-5 h-5" />
+              Saiba Mais
+            </button>
+            <a
+              href="https://wa.me/559999999999" // Substitua pelo número correto
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 bg-transparent border border-customOrange text-customOrange font-semibold rounded-lg hover:bg-customOrange hover:text-white transition-colors duration-300"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Fale Conosco
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

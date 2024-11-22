@@ -1,9 +1,11 @@
+import Location from "./components/Location";
 import About from "./components/About";
 import Carrosel from "./components/Carrosel";
 import Contratos from "./components/Contratos";
 import Nav from "./components/Nav";
 import Servicos from "./components/Servicos";
-
+import Contato from "./components/Contato";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -30,16 +32,15 @@ function App() {
         </section>
         <section
           id="contato"
-          className="h-screen bg-teal-500 flex items-center justify-center"
         >
-          <h1 className="text-white text-4xl">Contato</h1>
+          <Contato/>
         </section>
         <section
           id="localizacao"
-          className="h-screen bg-indigo-500 flex items-center justify-center"
         >
-          <h1 className="text-white text-4xl">Localização</h1>
+          <Location/>
         </section>
+        <Footer/>
       </main>
     </div>
   );

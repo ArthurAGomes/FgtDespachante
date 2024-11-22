@@ -5,7 +5,7 @@ function Contratos() {
   return (
     <div className="w-full py-16 bg-white">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-blue-800">
+        <h2 className="text-4xl font-bold text-customDarkBlue">
           Contratos Disponíveis
         </h2>
         <p className="text-lg text-gray-600 mt-4">
@@ -16,13 +16,13 @@ function Contratos() {
 
       <div className="flex flex-wrap justify-center gap-8">
         {/* Card 1: Contrato de Transferência de Veículo */}
-        <div className="w-72 bg-white border border-blue-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform ">
+        <div className="w-72 bg-white border rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform ">
           <div className="p-6 text-center">
-            <div className="bg-blue-600 p-4 rounded-full mb-4 inline-block">
+            <div className="bg-customDarkBlue p-4 rounded-full mb-4 inline-block">
               <FileText className="text-white text-3xl" />
             </div>
-            <h3 className="text-xl font-semibold text-blue-800">
-              Contrato de Transferência
+            <h3 className="text-xl font-semibold text-customDarkBlue">
+              Contrato de Transferência Veiculo
             </h3>
             <p className="text-md text-gray-700 mt-2">
               Modelo de contrato para transferência de veículo.
@@ -33,7 +33,7 @@ function Contratos() {
                 href="/docs/contrato_transferencia_veiculo.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full py-2 mt-4 text-center text-blue-600 border border-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition duration-300"
+                className="block w-full py-2 mt-4 text-center text-cusbg-customDarkBlue border border-cusbg-customDarkBlue rounded-md hover:bg-customDarkBlue hover:text-white transition duration-300"
               >
                 <Eye className="inline-block mr-2" />
                 Visualizar
@@ -42,7 +42,7 @@ function Contratos() {
               <a
                 href="/docs/contrato_transferencia_veiculo.pdf"
                 download
-                className="block w-full py-2 mt-2 text-center text-white bg-blue-600 border border-blue-600 rounded-md hover:bg-blue-700 transition duration-300"
+                className="block w-full py-2 mt-2 text-center text-white bg-customOrange border border-cusbg-customDarkBlue rounded-md hover:bg-orange-400 transition duration-300"
               >
                 Baixar
               </a>
@@ -51,12 +51,12 @@ function Contratos() {
         </div>
 
         {/* Card 2: Contrato de Compra e Venda de Veículo */}
-        <div className="w-72 bg-white border border-blue-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform ">
+        <div className="w-72 bg-white border  rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform ">
           <div className="p-6 text-center">
-            <div className="bg-blue-600 p-4 rounded-full mb-4 inline-block">
+            <div className="bg-customDarkBlue p-4 rounded-full mb-4 inline-block">
               <FileText className="text-white text-3xl" />
             </div>
-            <h3 className="text-xl font-semibold text-blue-800">
+            <h3 className="text-xl font-semibold text-customDarkBlue">
               Contrato de Compra e Venda
             </h3>
             <p className="text-md text-gray-700 mt-2">
@@ -67,15 +67,15 @@ function Contratos() {
                 href="/docs/contrato_compra_venda_veiculo.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full py-2 mt-4 text-center text-blue-600 border border-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition duration-300"
+                className="block w-full py-2 mt-4 text-center text-cusbg-customDarkBlue border border-cusbg-customDarkBlue rounded-md hover:bg-customDarkBlue hover:text-white transition duration-300"
               >
                 <Eye className="inline-block mr-2" />
                 Visualizar
               </a>
               <a
-                href="/docs/contrato_compra_venda_veiculo.pdf"
+                href="/docs/contrato_transferencia_veiculo.pdf"
                 download
-                className="block w-full py-2 mt-2 text-center text-white bg-blue-600 border border-blue-600 rounded-md hover:bg-blue-700 transition duration-300"
+                className="block w-full py-2 mt-2 text-center text-white bg-customOrange border border-cusbg-customDarkBlue rounded-md hover:bg-orange-400 transition duration-300"
               >
                 Baixar
               </a>
@@ -84,12 +84,12 @@ function Contratos() {
         </div>
 
         {/* Card 3: Contrato de Prestação de Serviços */}
-        <div className="w-72 bg-white border border-blue-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform ">
+        <div className="w-72 bg-white border  rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform ">
           <div className="p-6 text-center">
-            <div className="bg-blue-600 p-4 rounded-full mb-4 inline-block">
+            <div className="bg-customDarkBlue p-4 rounded-full mb-4 inline-block">
               <FileText className="text-white text-3xl" />
             </div>
-            <h3 className="text-xl font-semibold text-blue-800">
+            <h3 className="text-xl font-semibold text-customDarkBlue">
               Contrato de Prestação de Serviços
             </h3>
             <p className="text-md text-gray-700 mt-2">
@@ -100,15 +100,15 @@ function Contratos() {
                 href="/docs/contrato_prestacao_servicos.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full py-2 mt-4 text-center text-blue-600 border border-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition duration-300"
+                className="block w-full py-2 mt-4 text-center text-cusbg-customDarkBlue border border-cusbg-customDarkBlue rounded-md hover:bg-customDarkBlue hover:text-white transition duration-300"
               >
                 <Eye className="inline-block mr-2" />
                 Visualizar
               </a>
               <a
-                href="/docs/contrato_prestacao_servicos.pdf"
+                href="/docs/contrato_transferencia_veiculo.pdf"
                 download
-                className="block w-full py-2 mt-2 text-center text-white bg-blue-600 border border-blue-600 rounded-md hover:bg-blue-700 transition duration-300"
+                className="block w-full py-2 mt-2 text-center text-white bg-customOrange border border-cusbg-customDarkBlue rounded-md hover:bg-orange-400 transition duration-300"
               >
                 Baixar
               </a>
@@ -117,12 +117,12 @@ function Contratos() {
         </div>
 
         {/* Card 4: Contrato de Locação de Veículo */}
-        <div className="w-72 bg-white border border-blue-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform ">
+        <div className="w-72 bg-white border  rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform ">
           <div className="p-6 text-center">
-            <div className="bg-blue-600 p-4 rounded-full mb-4 inline-block">
+            <div className="bg-customDarkBlue p-4 rounded-full mb-4 inline-block">
               <FileText className="text-white text-3xl" />
             </div>
-            <h3 className="text-xl font-semibold text-blue-800">
+            <h3 className="text-xl font-semibold text-customDarkBlue">
               Contrato de Locação de Veículo
             </h3>
             <p className="text-md text-gray-700 mt-2">
@@ -133,15 +133,15 @@ function Contratos() {
                 href="/docs/contrato_locacao_veiculo.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full py-2 mt-4 text-center text-blue-600 border border-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition duration-300"
+                className="block w-full py-2 mt-4 text-center text-cusbg-customDarkBlue border border-cusbg-customDarkBlue rounded-md hover:bg-customDarkBlue hover:text-white transition duration-300"
               >
                 <Eye className="inline-block mr-2" />
                 Visualizar
               </a>
               <a
-                href="/docs/contrato_locacao_veiculo.pdf"
+                href="/docs/contrato_transferencia_veiculo.pdf"
                 download
-                className="block w-full py-2 mt-2 text-center text-white bg-blue-600 border border-blue-600 rounded-md hover:bg-blue-700 transition duration-300"
+                className="block w-full py-2 mt-2 text-center text-white bg-customOrange border border-cusbg-customDarkBlue rounded-md hover:bg-orange-400 transition duration-300"
               >
                 Baixar
               </a>
