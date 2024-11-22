@@ -118,48 +118,56 @@ function Servicos() {
 
   return (
     <div className="w-full py-16 bg-white">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-customDarkBlue">
-          Nossos Serviços
-        </h2>
-        <p className="text-lg text-gray-600 mt-4">
-          Conte com a nossa experiência para cuidar de toda a documentação do
-          seu veículo de forma rápida e sem complicação.
-        </p>
-      </div>
+      <div className="container mx-auto max-w-6xl px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-customDarkBlue">
+            Nossos Serviços
+          </h2>
+          <p className="text-lg text-gray-600 mt-4">
+            Conte com a nossa experiência para cuidar de toda a documentação do
+            seu veículo de forma rápida e sem complicação.
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className="max-w-sm bg-slate-50 rounded-lg shadow-xl overflow-hidden"
-          >
-            <div className="p-6 text-center">
-              <div className="bg-customDarkBlue p-4 rounded-full inline-block mb-4">
-                {service.icon}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="w-80 h-[350px] bg-slate-100 rounded-lg shadow-xl overflow-hidden flex flex-col items-center justify-between"
+            >
+              <div className="p-6 text-center flex-1 flex justify-center flex-col items-center">
+                <div className="bg-customDarkBlue p-4 rounded-full inline-block mb-4">
+                  {service.icon}
+                </div>
+                <h3 className="text-2xl font-semibold text-customDarkBlue">
+                  {service.title}
+                </h3>
+                <p className="text-lg text-gray-700 mt-2">
+                  {service.description}
+                </p>
               </div>
-              <h3 className="text-2xl font-semibold text-customDarkBlue">
-                {service.title}
-              </h3>
-              <p className="text-lg text-gray-700 mt-2">
-                {service.description}
-              </p>
               <button
                 onClick={() =>
                   handleOpenModal(service.title, service.documents)
                 }
-                className="mt-4 px-4 py-2 bg-customDarkBlue text-white rounded hover:bg-blue-800"
+                className="mb-4 px-4 py-3 bg-customDarkBlue text-white rounded hover:bg-blue-800"
               >
                 Documentos Necessários
               </button>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg shadow-lg p-6 max-w-lg w-full">
+        <div
+          className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50"
+          onClick={handleCloseModal} 
+        >
+          <div
+            className="bg-white rounded-lg shadow-lg p-6 max-w-lg w-full"
+            onClick={(e) => e.stopPropagation()} 
+          >
             <h2 className="text-2xl font-bold text-customDarkBlue mb-4">
               {modalContent.title}
             </h2>

@@ -48,7 +48,7 @@ function Nav() {
             <li>
               <Link
                 to="quem-somos"
-                offset={-100}
+                offset={-10}
                 smooth={true}
                 duration={500}
                 className="cursor-pointer text-lg hover:text-customOrange transition-colors"
@@ -60,7 +60,7 @@ function Nav() {
             <li>
               <Link
                 to="servicos"
-                offset={-100}
+                offset={-20}
                 smooth={true}
                 duration={500}
                 className="cursor-pointer text-lg hover:text-customOrange transition-colors"
