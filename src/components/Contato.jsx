@@ -1,4 +1,5 @@
 import { FaWhatsapp } from "react-icons/fa";
+import {Phone} from 'lucide-react';
 
 function Contato() {
   const handleWhatsAppSubmit = (event) => {
@@ -27,10 +28,10 @@ function Contato() {
             Estamos disponíveis para responder suas dúvidas. Preencha os campos
             e envie sua mensagem diretamente pelo WhatsApp.
           </p>
-          <div className="mt-6 flex items-center justify-center md:justify-start gap-4">
-            <FaWhatsapp className="text-slate-50 w-8 h-8" />
-            <span className="text-slate-50 text-1xl font-semibold">
-              Atendimento Rápido e Eficiente
+          <div className="mt-6 flex items-center justify-center align-baseline md:justify-start gap-4">
+            <Phone className="text-slate-50 w-8 h-8" />
+            <span className="text-slate-50 text-2xl font-semibold">
+              (11) 3532-5515{" "}
             </span>
           </div>
         </div>
