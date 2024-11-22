@@ -24,23 +24,31 @@ function About() {
 
           {/* Subtítulo */}
           <h2 className="text-2xl font-thin text-gray-800">
-            Criamos Soluções que Inspiram
+            FGT - Mais de 10 Anos de Excelência em Serviços de Despachante
           </h2>
 
           {/* Descrição */}
           <p className="text-lg leading-relaxed text-gray-800">
-            Nossa missão é transformar ideias em realidade através de soluções
-            criativas e inovadoras. Com uma equipe apaixonada, entregamos
-            excelência em cada projeto, sempre priorizando as necessidades dos
-            nossos clientes e buscando impactar positivamente suas vidas e
-            negócios.
+            Na FGT, somos especialistas em descomplicar e agilizar toda a
+            documentação necessária para veículos. Com mais de uma década de
+            experiência, oferecemos serviços completos que garantem praticidade,
+            segurança e tranquilidade para nossos clientes.
+          </p>
+
+          <p className="text-lg leading-relaxed text-gray-800">
+            Nosso compromisso é com a sua satisfação. Atuamos com transparência,
+            eficiência e um atendimento personalizado para atender suas
+            necessidades. Cuidamos de tudo, desde transferências e
+            licenciamentos até ofícios de regularização e primeiros
+            emplacamentos.
           </p>
 
           {/* Informações Adicionais */}
           <p className="text-lg leading-relaxed text-gray-800">
-            Seja você um pequeno empreendedor ou uma grande organização, estamos
-            aqui para oferecer serviços personalizados que geram resultados
-            duradouros. Junte-se a nós e faça parte de uma história de sucesso.
+            Seja para resolver pendências ou prevenir futuros problemas, a FGT
+            está ao seu lado para oferecer soluções rápidas e confiáveis.
+            Junte-se aos nossos clientes satisfeitos e confie em quem entende do
+            assunto.
           </p>
 
           {/* Botões de Ação */}

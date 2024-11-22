@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 function Contato() {
   const handleWhatsAppSubmit = (event) => {
@@ -28,7 +28,7 @@ function Contato() {
             e envie sua mensagem diretamente pelo WhatsApp.
           </p>
           <div className="mt-6 flex items-center justify-center md:justify-start gap-4">
-            <MessageCircle className="text-slate-50 w-8 h-8" />
+            <FaWhatsapp className="text-slate-50 w-8 h-8" />
             <span className="text-slate-50 text-1xl font-semibold">
               Atendimento Rápido e Eficiente
             </span>
@@ -76,7 +76,7 @@ function Contato() {
             type="submit"
             className="w-full flex items-center justify-center gap-2 bg-green-500 text-white font-semibold py-3 rounded-lg shadow-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400"
           >
-            <MessageCircle className="w-6 h-6" />
+            <FaWhatsapp className="w-6 h-6" />
             Enviar via WhatsApp
           </button>
         </form>

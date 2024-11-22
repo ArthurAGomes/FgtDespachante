@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 import Servicos from "./components/Servicos";
 import Contato from "./components/Contato";
 import Footer from "./components/Footer";
+import Parceiros from "./components/Parceiros";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           id="quem-somos"
         >
           <About/>
+          <Parceiros/>
         </section>
         <section
           id="servicos"

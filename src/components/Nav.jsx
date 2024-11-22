@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-scroll";
 import { Menu, X } from "lucide-react";
-import { MessageCircle } from "lucide-react"; // Ícone de telefone do Lucide
-
+import {FaWhatsapp} from "react-icons/fa";
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -116,7 +115,7 @@ function Nav() {
           rel="noopener noreferrer"
           className="hidden md:flex items-center gap-2 px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-lg hover:bg-green-400 transition-colors duration-300"
         >
-          <MessageCircle className="w-5 h-5" />
+          <FaWhatsapp className="w-5 h-5" />
           WhatsApp
         </a>
       </div>
@@ -128,7 +127,7 @@ function Nav() {
         rel="noopener noreferrer"
         className="md:hidden fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-400 transition-colors duration-300"
       >
-        <MessageCircle className="w-6 h-6" />
+        <FaWhatsapp className="w-6 h-6" />
       </a>
     </header>
   );

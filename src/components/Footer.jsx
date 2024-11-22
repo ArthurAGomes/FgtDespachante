@@ -1,3 +1,5 @@
+import { FaInstagram, FaFacebookF, FaWhatsapp } from "react-icons/fa";
+
 function Footer() {
   return (
     <footer className="bg-customDarkBlue text-white py-6">
@@ -5,28 +7,37 @@ function Footer() {
         {/* Horários de Trabalho */}
         <div className="mb-4 md:mb-0">
           <h3 className="text-lg font-bold mb-2">Horários de Trabalho</h3>
-          <p className="text-sm">Segunda a Sexta: 8h - 18h</p>
-          <p className="text-sm">Sábado: 8h - 12h</p>
-          <p className="text-sm">Domingo: Fechado</p>
+          <p className="text-sm">Segunda a Sexta: 9h - 18h</p>
         </div>
 
         {/* Redes Sociais */}
         <div className="flex space-x-6 mb-4 md:mb-0">
+          {/* Instagram */}
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/suaempresa"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-customOrange transition"
           >
-            <i className="lucide lucide-instagram text-2xl"></i>
+            <FaInstagram className="text-2xl" />
           </a>
+          {/* Facebook */}
+          <a
+            href="https://www.facebook.com/suaempresa"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-customOrange transition"
+          >
+            <FaFacebookF className="text-2xl" />
+          </a>
+          {/* WhatsApp */}
           <a
             href="https://wa.me/5599999999999"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-customOrange transition"
           >
-            <i className="lucide lucide-message-circle text-2xl"></i>
+            <FaWhatsapp className="text-2xl" />
           </a>
         </div>
 
