@@ -25,7 +25,7 @@ function Carrosel() {
   ];
 
   return (
-    <div className="w-full h-[500px] flex justify-center items-center bg-gray-100">
+    <div className="w-full h-[550px] flex justify-center items-center bg-gray-100">
       <Swiper
         modules={[Autoplay, Navigation]}
         slidesPerView={1} // Exibe uma imagem por vez
