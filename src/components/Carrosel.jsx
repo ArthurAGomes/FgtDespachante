@@ -28,11 +28,11 @@ function Carrosel() {
     <div className="w-full h-[550px] flex justify-center items-center bg-gray-100">
       <Swiper
         modules={[Autoplay, Navigation]}
-        slidesPerView={1} // Exibe uma imagem por vez
-        spaceBetween={0} // Remove espaço entre as imagens
-        loop={true} // Permite looping infinito
+        slidesPerView={1}
+        spaceBetween={0} 
+        loop={true} 
         autoplay={{
-          delay: 4000, // Troca a imagem a cada 4 segundos
+          delay: 4000, 
           disableOnInteraction: false,
         }}
         navigation={false} // Desativa as setas
