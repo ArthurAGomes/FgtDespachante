@@ -93,13 +93,11 @@ function Servicos() {
 
 
   return (
-    <div className="w-full py-16 bg-white">
+    <div className="w-full py-16 bg-customDarkBlue">
       <div className="container mx-auto max-w-6xl px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-customDarkBlue">
-            Nossos Serviços
-          </h2>
-          <p className="text-lg text-gray-600 mt-4">
+          <h2 className="text-4xl font-bold text-white">Nossos Serviços</h2>
+          <p className="text-lg text-gray-300 mt-4">
             Conte com a nossa experiência para cuidar de toda a documentação do
             seu veículo de forma rápida e sem complicação.
           </p>
@@ -109,7 +107,7 @@ function Servicos() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="w-80 h-[350px] bg-slate-100 rounded-lg shadow-xl overflow-hidden flex flex-col items-center justify-between"
+              className="w-80 h-[350px] bg-white/90 rounded-lg shadow-xl overflow-hidden flex flex-col items-center justify-between"
             >
               <div className="p-6 text-center flex-1 flex justify-center flex-col items-center">
                 <div className="bg-customDarkBlue p-4 rounded-full inline-block mb-4">
@@ -138,11 +136,11 @@ function Servicos() {
       {showModal && (
         <div
           className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50"
-          onClick={handleCloseModal} 
+          onClick={handleCloseModal}
         >
           <div
             className="bg-white rounded-lg shadow-lg p-6 max-w-lg w-full"
-            onClick={(e) => e.stopPropagation()} 
+            onClick={(e) => e.stopPropagation()}
           >
             <h2 className="text-2xl font-bold text-customDarkBlue mb-4">
               {modalContent.title}

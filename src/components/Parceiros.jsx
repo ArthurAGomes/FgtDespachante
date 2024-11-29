@@ -13,7 +13,7 @@ function Parceiros() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={PKM} alt="PKM" className="h-32 object-contain rounded-sm" />
+          <img src={PKM} alt="PKM" className="h-32 w-32 object-contain rounded-sm" />
         </a>
 
         <a
@@ -24,7 +24,7 @@ function Parceiros() {
           <img
             src={bancoRendimento}
             alt="Banco Rendimento"
-            className="h-32 object-contain rounded-sm"
+            className="h-40 w-40 object-contain rounded-sm"
           />
         </a>
       </div>
