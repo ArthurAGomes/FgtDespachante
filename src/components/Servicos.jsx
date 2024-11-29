@@ -30,7 +30,7 @@ function Servicos() {
       title: "ATPVE",
       description:
         "Recibo de compra e venda digital de veículos de forma prática.",
-      icon: <ClipboardCheck className="text-white text-3xl" />,
+      icon: <ClipboardCheck className="text-customDarkBlue text-3xl" />,
       documents: [
         "Documento do veículo",
         "Identidade e CPF",
@@ -42,7 +42,7 @@ function Servicos() {
     {
       title: "Liberação de veiculo apreendido",
       description: "Libere seu veiculo apreendido.",
-      icon: <FilePlus className="text-white text-3xl" />,
+      icon: <FilePlus className="text-customDarkBlue text-3xl" />,
       documents: [
         "Boletim de ocorrência",
         "Documento do veículo",
@@ -53,21 +53,15 @@ function Servicos() {
     },
     {
       title: "Licenciamento",
-      description: "Verifique os débitos do seu veiculo no link abaixo",
-      icon: <Calendar className="text-white text-3xl" />,
-      documents: [
-        "Documento do veículo",
-        "Comprovante de pagamento",
-        "Identidade e CPF",
-        "Comprovante de endereço atualizado",
-        "Certificado de licenciamento anual (CRLV anterior)",
-      ],
+      description: "Verifique os débitos do seu veículo no link abaixo.",
+      icon: <Calendar className="text-customDarkBlue text-3xl" />,
+      link: "https://www.ipva.fazenda.sp.gov.br/ipvanet_consulta/consulta.aspx", // Link direto
     },
     {
       title: "Segunda Via de CRV",
       description:
         "Emissão da segunda via do Certificado de Registro de Veículo.",
-      icon: <FileText className="text-white text-3xl" />,
+      icon: <FileText className="text-customDarkBlue text-3xl" />,
       documents: [
         "Documento do veículo",
         "Boletim de ocorrência (em caso de perda)",
@@ -80,7 +74,7 @@ function Servicos() {
       title: "Primeiro Emplacamento",
       description:
         "Serviço rápido para o primeiro emplacamento do seu veículo.",
-      icon: <Car className="text-white text-3xl" />,
+      icon: <Car className="text-customDarkBlue text-3xl" />,
       documents: [
         "Nota fiscal do veículo",
         "Identidade e CPF",
@@ -90,7 +84,6 @@ function Servicos() {
       ],
     },
   ];
-
 
   return (
     <div className="w-full py-16 bg-customDarkBlue">
@@ -107,10 +100,10 @@ function Servicos() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="w-80 h-[350px] bg-white/90 rounded-lg shadow-xl overflow-hidden flex flex-col items-center justify-between"
+              className="w-80 h-[350px] bg-white rounded-lg shadow-xl overflow-hidden flex flex-col items-center justify-between"
             >
               <div className="p-6 text-center flex-1 flex justify-center flex-col items-center">
-                <div className="bg-customDarkBlue p-4 rounded-full inline-block mb-4">
+                <div className="bg-white p-4 rounded-full inline-block mb-4 shadow">
                   {service.icon}
                 </div>
                 <h3 className="text-2xl font-semibold text-customDarkBlue">
@@ -120,14 +113,26 @@ function Servicos() {
                   {service.description}
                 </p>
               </div>
-              <button
-                onClick={() =>
-                  handleOpenModal(service.title, service.documents)
-                }
-                className="mb-4 px-4 py-3 bg-customDarkBlue text-white rounded hover:bg-blue-800"
-              >
-                Documentos Necessários
-              </button>
+              {service.link ? (
+                // Botão diferenciado para Licenciamento
+                <a
+                  href={service.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mb-4 px-4 py-3 bg-customDarkBlue text-white rounded hover:bg-blue-700"
+                >
+                  Verifique aqui
+                </a>
+              ) : (
+                <button
+                  onClick={() =>
+                    handleOpenModal(service.title, service.documents)
+                  }
+                  className="mb-4 px-4 py-3 bg-customDarkBlue text-white rounded hover:bg-blue-700"
+                >
+                  Documentos Necessários
+                </button>
+              )}
             </div>
           ))}
         </div>
