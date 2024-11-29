@@ -110,7 +110,7 @@ function Nav() {
 
         {/* Botão WhatsApp */}
         <a
-          href="https://wa.me/559999999999" // Substitua pelo número correto
+          href="https://wa.me/5511940774221"
           target="_blank"
           rel="noopener noreferrer"
           className="hidden md:flex items-center gap-2 px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-lg hover:bg-green-400 transition-colors duration-300"
@@ -122,7 +122,7 @@ function Nav() {
 
       {/* Botão Flutuante de WhatsApp (para Mobile) */}
       <a
-        href="https://wa.me/559999999999" // Substitua pelo número correto
+        href="https://wa.me/5511940774221"
         target="_blank"
         rel="noopener noreferrer"
         className="md:hidden fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-400 transition-colors duration-300"

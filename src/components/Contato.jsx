@@ -7,7 +7,7 @@ function Contato() {
 
     const name = event.target.name.value;
     const message = event.target.message.value;
-    const phoneNumber = "559999999999"; // Substitua pelo número correto
+    const phoneNumber = "5511940774221"; // Substitua pelo número correto
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       `Olá, meu nome é ${name}. ${message}`
     )}`;

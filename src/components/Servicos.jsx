@@ -40,8 +40,8 @@ function Servicos() {
       ],
     },
     {
-      title: "Ofício de Liberação",
-      description: "Emissão de ofício para liberação de veículo apreendido.",
+      title: "Liberação de veiculo apreendido",
+      description: "Libere seu veiculo apreendido.",
       icon: <FilePlus className="text-white text-3xl" />,
       documents: [
         "Boletim de ocorrência",
@@ -52,32 +52,8 @@ function Servicos() {
       ],
     },
     {
-      title: "Ofício de Coleção",
-      description: "Regularização de veículos de coleção.",
-      icon: <Tag className="text-white text-3xl" />,
-      documents: [
-        "Laudo técnico",
-        "Fotos do veículo",
-        "Documento do proprietário",
-        "Certificado de originalidade (se aplicável)",
-        "Comprovante de regularização no Detran",
-      ],
-    },
-    {
-      title: "Ofício de Coloração",
-      description: "Regularize a coloração do seu veículo.",
-      icon: <Car className="text-white text-3xl" />,
-      documents: [
-        "Documento do veículo",
-        "Comprovante de alteração",
-        "Nota fiscal do serviço",
-        "Autorização do Detran (se aplicável)",
-        "Laudo de vistoria atualizado",
-      ],
-    },
-    {
-      title: "Licenciamento em Dia",
-      description: "Regularize o licenciamento do seu veículo rapidamente.",
+      title: "Licenciamento",
+      description: "Verifique os débitos do seu veiculo no link abaixo",
       icon: <Calendar className="text-white text-3xl" />,
       documents: [
         "Documento do veículo",

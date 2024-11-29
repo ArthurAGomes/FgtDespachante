@@ -1,57 +1,32 @@
-function Parceiros() {
-  const logos = [
-    "/logo1.png",
-    "/logo2.png",
-    "/logo3.png",
-    "/logo4.png",
-    "/logo5.png",
-  ];
+import PKM from "../assets/img/pkm.jpg";
+import bancoRendimento from "../assets/img/banco-rendimento.png";
 
+function Parceiros() {
   return (
-    <div className="shadow-sm border-b border-t py-6">
-      <h2 className="text-4xl font-bold text-customDarkBlue text-center my-10">
+    <div className="py-12 border">
+      <h2 className="text-4xl font-bold text-customDarkBlue text-center mb-10">
         Parceiros
       </h2>
-      <div className="overflow-hidden relative">
-        {/* Linha 1 - Direção para a direita */}
-        <div className="flex animate-marquee hover:pause space-x-8">
-          {logos.map((logo, index) => (
-            <img
-              key={`line1-${index}`}
-              src={logo}
-              alt={`Parceiro ${index + 1}`}
-              className="h-16 object-contain"
-            />
-          ))}
-          {logos.map((logo, index) => (
-            <img
-              key={`line1-copy-${index}`}
-              src={logo}
-              alt={`Parceiro ${index + 1}`}
-              className="h-16 object-contain"
-            />
-          ))}
-        </div>
+      <div className="flex justify-around items-center space-x-24">
+        <a
+          href="https://www.pkmracing.com.br/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={PKM} alt="PKM" className="h-32 object-contain rounded-sm" />
+        </a>
 
-        {/* Linha 2 - Direção para a esquerda */}
-        <div className="flex animate-marquee-reverse hover:pause space-x-8 mt-6">
-          {logos.map((logo, index) => (
-            <img
-              key={`line2-${index}`}
-              src={logo}
-              alt={`Parceiro ${index + 1}`}
-              className="h-16 object-contain"
-            />
-          ))}
-          {logos.map((logo, index) => (
-            <img
-              key={`line2-copy-${index}`}
-              src={logo}
-              alt={`Parceiro ${index + 1}`}
-              className="h-16 object-contain"
-            />
-          ))}
-        </div>
+        <a
+          href="https://www.rendimento.com.br/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={bancoRendimento}
+            alt="Banco Rendimento"
+            className="h-32 object-contain rounded-sm"
+          />
+        </a>
       </div>
     </div>
   );

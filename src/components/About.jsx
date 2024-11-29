@@ -1,5 +1,6 @@
 import aboutImg from "../assets/img/about-img.png";
 import { Phone, MessageCircle } from "lucide-react";
+import { FaInstagram } from "react-icons/fa";
 
 function About() {
   return (
@@ -24,18 +25,18 @@ function About() {
 
           {/* Subtítulo */}
           <h2 className="text-2xl font-thin text-gray-800">
-            FGT - Mais de 10 Anos de Excelência em Serviços de Despachante
+            Mais de 10 Anos de Excelência em Serviços de Despachante
           </h2>
 
           {/* Descrição */}
-          <p className="text-lg leading-relaxed text-gray-800">
+          <p className="text-lg leading-loose text-gray-800 tracking-wide">
             Na FGT, somos especialistas em descomplicar e agilizar toda a
             documentação necessária para veículos. Com mais de uma década de
             experiência, oferecemos serviços completos que garantem praticidade,
             segurança e tranquilidade para nossos clientes.
           </p>
 
-          <p className="text-lg leading-relaxed text-gray-800">
+          <p className="text-lg leading-loose text-gray-800 tracking-wide">
             Nosso compromisso é com a sua satisfação. Atuamos com transparência,
             eficiência e um atendimento personalizado para atender suas
             necessidades. Cuidamos de tudo, desde transferências e
@@ -44,23 +45,22 @@ function About() {
           </p>
 
           {/* Informações Adicionais */}
-          <p className="text-lg leading-relaxed text-gray-800">
+          <p className="text-lg leading-loose text-gray-800 tracking-wide">
             Seja para resolver pendências ou prevenir futuros problemas, a FGT
             está ao seu lado para oferecer soluções rápidas e confiáveis.
             Junte-se aos nossos clientes satisfeitos e confie em quem entende do
             assunto.
           </p>
 
-          {/* Botões de Ação */}
-          <div className="flex items-end justify-end">
+          <div className="flex items-end justify-center">
             <a
-              href="https://wa.me/559999999999" // Substitua pelo número correto
+              href="https://www.instagram.com/fgtdespachante" // Substitua pelo link correto
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 bg-transparent border border-customOrange text-customOrange font-semibold rounded-lg hover:bg-customOrange hover:text-white transition-colors duration-300"
+              className="flex items-center gap-2 px-6 py-3 bg-transparent border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gradient-to-r hover:from-[#f09433] hover:via-[#e6683c] hover:to-[#dc2743] hover:text-white transition-all duration-300"
             >
-              <MessageCircle className="w-5 h-5" />
-              Fale Conosco
+              <FaInstagram className="w-5 h-5" />
+              Siga-nos no Instagram
             </a>
           </div>
         </div>
