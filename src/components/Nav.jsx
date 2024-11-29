@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-scroll";
 import { Menu, X } from "lucide-react";
-import {FaWhatsapp} from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
+import logo from "../assets/img/fgt-logo.png";
+
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -13,9 +15,13 @@ function Nav() {
     <header className="sticky top-0 z-20 w-full bg-white border-b border-gray-200 shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-5 py-4 md:px-10">
         {/* Logo */}
-        <h1 className="text-2xl sm:text-3xl font-bold text-customDarkBlue truncate w-full md:w-auto">
-          FGT Despachante
-        </h1>
+        <a href="/" className="flex items-center">
+          <img
+            src={logo}
+            alt="FGT Despachante"
+            className="h-12 sm:h-12 object-contain rounded-md"
+          />
+        </a>
 
         {/* Botão Mobile (hamburguer) */}
         <button
@@ -29,82 +35,31 @@ function Nav() {
         <nav
           className={`${
             isOpen ? "block" : "hidden"
-          } absolute top-full left-0 w-full bg-white shadow-md md:shadow-none md:static md:w-auto md:flex md:items-center md:justify-center`}
+          } absolute top-full left-0 w-full bg-white shadow-md md:shadow-none md:static md:w-auto md:flex md:items-center`}
         >
           <ul className="flex flex-col md:flex-row items-center gap-6 md:gap-10 py-6 md:py-0 text-gray-800">
             {/* Links */}
-            <li>
-              <Link
-                to="inicio"
-                offset={-100}
-                smooth={true}
-                duration={500}
-                className="cursor-pointer text-lg hover:text-customOrange transition-colors"
-                onClick={toggleMenu}
-              >
-                Início
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="quem-somos"
-                offset={-10}
-                smooth={true}
-                duration={500}
-                className="cursor-pointer text-lg hover:text-customOrange transition-colors"
-                onClick={toggleMenu}
-              >
-                Quem Somos
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="servicos"
-                offset={-20}
-                smooth={true}
-                duration={500}
-                className="cursor-pointer text-lg hover:text-customOrange transition-colors"
-                onClick={toggleMenu}
-              >
-                Serviços
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="contratos"
-                offset={-100}
-                smooth={true}
-                duration={500}
-                className="cursor-pointer text-lg hover:text-customOrange transition-colors"
-                onClick={toggleMenu}
-              >
-                Contratos
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="contato"
-                offset={-100}
-                smooth={true}
-                duration={500}
-                className="cursor-pointer text-lg hover:text-customOrange transition-colors"
-                onClick={toggleMenu}
-              >
-                Contato
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="localizacao"
-                offset={-100}
-                smooth={true}
-                duration={500}
-                className="cursor-pointer text-lg hover:text-customOrange transition-colors"
-                onClick={toggleMenu}
-              >
-                Localização
-              </Link>
-            </li>
+            {[
+              { to: "inicio", label: "Início" },
+              { to: "quem-somos", label: "Quem Somos" },
+              { to: "servicos", label: "Serviços" },
+              { to: "formularios", label: "Formulários" },
+              { to: "contato", label: "Contato" },
+              { to: "localizacao", label: "Localização" },
+            ].map((item) => (
+              <li key={item.to}>
+                <Link
+                  to={item.to}
+                  offset={-100}
+                  smooth={true}
+                  duration={500}
+                  className="cursor-pointer text-lg hover:text-customOrange transition-colors"
+                  onClick={toggleMenu}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
 

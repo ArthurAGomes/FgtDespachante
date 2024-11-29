@@ -6,7 +6,7 @@ import {
   ClipboardCheck,
   Calendar,
   FilePlus,
-  Tag,
+  ArrowRightCircle,
 } from "lucide-react";
 
 function Servicos() {
@@ -32,23 +32,66 @@ function Servicos() {
         "Recibo de compra e venda digital de veículos de forma prática.",
       icon: <ClipboardCheck className="text-customDarkBlue text-3xl" />,
       documents: [
-        "Documento do veículo",
-        "Identidade e CPF",
-        "Comprovante de endereço",
-        "Procuração (se aplicável)",
-        "Reconhecimento de firma (se exigido)",
+        "RENAVAM",
+        "Placa",
+        "Chassi",
+        "Hodômetro",
+        "E-mail do vendedor",
+        "CPF do vendedor",
+        "CPF do comprador",
+        "Nome do comprador",
+        "E-mail do comprador",
+        "Valor da venda",
+        "CEP do comprador",
+        "Município do comprador",
+        "Endereço Completo"
       ],
     },
     {
-      title: "Liberação de veiculo apreendido",
-      description: "Libere seu veiculo apreendido.",
+      title: "Liberação de veículo apreendido",
+      description: "Libere seu veículo apreendido.",
       icon: <FilePlus className="text-customDarkBlue text-3xl" />,
       documents: [
-        "Boletim de ocorrência",
-        "Documento do veículo",
-        "RG e CPF do proprietário",
-        "Comprovante de pagamento das taxas",
-        "Termo de liberação emitido pelo órgão competente",
+        "CRR ou TRV - ORIGINAL",
+        "CNH do proprietário - ORIGINAL",
+        "Licenciamento - cópia simples do último emitido",
+      ],
+    },
+    {
+      title: "2ª via do Recibo de Venda",
+      description:
+        "Emissão da segunda via do Certificado de Registro de Veículo.",
+      icon: <FileText className="text-customDarkBlue text-3xl" />,
+      documents: [
+        "Declaração de perda com firma por autenticidade",
+        "Laudo de vistoria ECV",
+        "Cópia simples e legível da CNH",
+        "Cópia simples e legível do comprovante de endereço em nome atual",
+      ],
+    },
+    {
+      title: "1ª Emplacamento",
+      description:
+        "Serviço rápido para o primeiro emplacamento do seu veículo.",
+      icon: <Car className="text-customDarkBlue text-3xl" />,
+      documents: [
+        "Nota fiscal de fábrica",
+        "Nota fiscal de venda",
+        "RENAVE",
+        "Decalque do chassi - ORIGINAL",
+        "Cópia simples e legível da CNH",
+        "Cópia simples e legível do comprovante de endereço em nome atual",
+      ],
+    },
+    {
+      title: "Transferência",
+      description: "Transfira a propriedade do veículo de forma prática.",
+      icon: <ArrowRightCircle className="text-customDarkBlue text-3xl" />,
+      documents: [
+        "Recibo de venda com firma reconhecida pelo vendedor e comprador - ORIGINAL",
+        "Laudo de vistoria ECV",
+        "Cópia simples e legível da CNH",
+        "Cópia simples e legível do comprovante de endereço em nome atual",
       ],
     },
     {
@@ -57,33 +100,9 @@ function Servicos() {
       icon: <Calendar className="text-customDarkBlue text-3xl" />,
       link: "https://www.ipva.fazenda.sp.gov.br/ipvanet_consulta/consulta.aspx", // Link direto
     },
-    {
-      title: "Segunda Via de CRV",
-      description:
-        "Emissão da segunda via do Certificado de Registro de Veículo.",
-      icon: <FileText className="text-customDarkBlue text-3xl" />,
-      documents: [
-        "Documento do veículo",
-        "Boletim de ocorrência (em caso de perda)",
-        "Identidade e CPF",
-        "Comprovante de pagamento de taxas",
-        "Declaração do proprietário (em caso de roubo ou perda)",
-      ],
-    },
-    {
-      title: "Primeiro Emplacamento",
-      description:
-        "Serviço rápido para o primeiro emplacamento do seu veículo.",
-      icon: <Car className="text-customDarkBlue text-3xl" />,
-      documents: [
-        "Nota fiscal do veículo",
-        "Identidade e CPF",
-        "Comprovante de endereço",
-        "Laudo de vistoria do veículo",
-        "Comprovante de pagamento das taxas de emplacamento",
-      ],
-    },
   ];
+
+
 
   return (
     <div className="w-full py-16 bg-customDarkBlue">
