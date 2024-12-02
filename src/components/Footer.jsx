@@ -42,7 +42,7 @@ function Footer() {
           <p className="text-sm">
             Desenvolvido por{" "}
             <a
-              href="https://wa.me/55940685885"
+              href="https://wa.me/5511940685885"
               target="_blank"
               rel="noopener noreferrer"
               className="text-customOrange hover:underline"
