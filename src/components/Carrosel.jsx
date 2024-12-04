@@ -5,7 +5,7 @@ import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import { useState } from "react";
 import { Link } from "react-scroll";
-
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import about from "../assets/img/banner1.jpg";
 import cadastro from "../assets/img/cadastro-motor.jpg";
 import liberacao from "../assets/img/liberacao-veiculo.jpg";
@@ -21,7 +21,7 @@ function Carrosel() {
       titulo: "Facilidade e agilidade para cuidar do seu veículo!",
       descricao: "Conheça todos os nossos serviços ao lado!",
       principal: true,
-      link: "servicos", // Associado à seção de serviços
+      link: "servicos",
     },
     {
       imagem: licenciamento,
@@ -65,19 +65,20 @@ function Carrosel() {
           delay: 7000,
           disableOnInteraction: false,
         }}
-        navigation={true}
+        navigation={{
+          nextEl: ".custom-next",
+          prevEl: ".custom-prev",
+        }}
         className="w-full h-full"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className="relative">
-            {/* Configuração para fade-in */}
             <FadeInImage
               src={slide.imagem}
               alt={`Slide ${index + 1}`}
               className="w-full h-full object-cover"
             />
             {slide.principal ? (
-              // Layout do slide principal ajustado
               <div className="absolute inset-0 flex items-center pl-6 md:pl-16 lg:pl-24 bg-gradient-to-r from-black/60 to-transparent">
                 <div className="text-white max-w-2xl space-y-6">
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
@@ -92,7 +93,7 @@ function Carrosel() {
                       smooth={true}
                       duration={500}
                       offset={-100}
-                      className="bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold cursor-pointer"
+                      className="bg-customDarkBlue hover:bg-gray-800 text-white py-3 px-6 rounded-lg font-semibold cursor-pointer"
                     >
                       Explore nossos serviços
                     </Link>
@@ -101,7 +102,7 @@ function Carrosel() {
                       smooth={true}
                       duration={500}
                       offset={-100}
-                      className="bg-transparent border border-white text-white py-3 px-6 rounded-lg hover:bg-white hover:text-blue-600 font-semibold cursor-pointer"
+                      className="bg-transparent border border-white text-white py-3 px-6 rounded-lg hover:bg-white hover:text-customDarkBlue font-semibold cursor-pointer"
                     >
                       Entre em contato
                     </Link>
@@ -109,7 +110,6 @@ function Carrosel() {
                 </div>
               </div>
             ) : (
-              // Layout dos slides secundários
               <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black/60 via-transparent to-transparent">
                 <h2 className="text-3xl md:text-4xl font-bold text-white">
                   {slide.titulo}
@@ -120,6 +120,14 @@ function Carrosel() {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {/* Botões de navegação - Usando Lucide Icons */}
+      <button className="custom-prev hidden md:flex absolute top-1/2 left-4 z-10 transform -translate-y-1/2 bg-customDarkBlue text-white p-4 rounded-full shadow-lg hover:bg-gray-700 text-xl">
+        <ArrowLeft size={30} /> {/* Ícone de seta para a esquerda */}
+      </button>
+      <button className="custom-next hidden md:flex absolute top-1/2 right-4 z-10 transform -translate-y-1/2 bg-customDarkBlue text-white p-4 rounded-full shadow-lg hover:bg-gray-700 text-xl">
+        <ArrowRight size={30} /> {/* Ícone de seta para a direita */}
+      </button>
     </div>
   );
 }
@@ -141,4 +149,3 @@ function FadeInImage({ src, alt, className }) {
 }
 
 export default Carrosel;
-

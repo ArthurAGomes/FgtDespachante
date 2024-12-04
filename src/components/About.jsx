@@ -1,4 +1,4 @@
-import aboutImg from "../assets/img/about-img.png";
+import aboutImg from "../assets/img/fachada.jpg";
 import { FaInstagram } from "react-icons/fa";
 
 function About() {
@@ -7,11 +7,14 @@ function About() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-16">
         {/* Imagem */}
         <div className="w-full md:w-1/2 flex justify-center relative">
-          <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-lg">
+          <div className="relative w-60
+          
+          
+          h-80 md:w-96 md:h-96 rounded-md overflow-hidden shadow-lg">
             <img
               src={aboutImg}
               alt="Sobre nós"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 ease-in-out"
+              className="w-full h-full object-fit hover:scale-105 transition-transform duration-300 ease-in-out"
             />
             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-customOrange via-transparent to-customOrange opacity-20"></div>
           </div>

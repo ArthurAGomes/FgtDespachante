@@ -27,6 +27,12 @@ function Servicos() {
 
   const services = [
     {
+      title: "Licenciamento",
+      description: "Verifique os débitos do seu veículo no link abaixo.",
+      icon: <Calendar className="text-customDarkBlue text-3xl" />,
+      link: "https://www.ipva.fazenda.sp.gov.br/ipvanet_consulta/consulta.aspx", // Link direto
+    },
+    {
       title: "ATPVE",
       description:
         "Recibo de compra e venda digital de veículos de forma prática.",
@@ -44,7 +50,7 @@ function Servicos() {
         "Valor da venda",
         "CEP do comprador",
         "Município do comprador",
-        "Endereço Completo"
+        "Endereço Completo",
       ],
     },
     {
@@ -93,12 +99,6 @@ function Servicos() {
         "Cópia simples e legível da CNH",
         "Cópia simples e legível do comprovante de endereço em nome atual",
       ],
-    },
-    {
-      title: "Licenciamento",
-      description: "Verifique os débitos do seu veículo no link abaixo.",
-      icon: <Calendar className="text-customDarkBlue text-3xl" />,
-      link: "https://www.ipva.fazenda.sp.gov.br/ipvanet_consulta/consulta.aspx", // Link direto
     },
   ];
 
