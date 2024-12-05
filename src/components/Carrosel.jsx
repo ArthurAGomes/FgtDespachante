@@ -26,12 +26,13 @@ function Carrosel() {
     {
       imagem: licenciamento,
       titulo: "Licenciamento em dia",
-      descricao: "",
+      descricao: "Mantenha sua documentação regularizada conosco.",
     },
     {
       imagem: liberacao,
       titulo: "Liberação de veículo apreendido",
-      descricao: "",
+      descricao:
+        "Agilizamos todo o processo de liberação do seu veículo apreendido, cuidando da documentação necessária e oferecendo suporte completo para que você recupere seu veículo com tranquilidade e rapidez.",
     },
     {
       imagem: cadastro,
@@ -41,7 +42,7 @@ function Carrosel() {
     {
       imagem: primeiroEmplacamento,
       titulo: "Primeiro Emplacamento",
-      descricao: "",
+      descricao: "Facilitamos o processo de emplacamento para você!",
     },
     {
       imagem: atpve,
@@ -51,7 +52,8 @@ function Carrosel() {
     {
       imagem: transferencia,
       titulo: "Transferência de Nome",
-      descricao: "",
+      descricao:
+        "Facilitamos a transferência de propriedade do seu veículo, garantindo que toda a documentação seja processada de forma rápida, segura e sem complicações. Deixe os detalhes burocráticos conosco!",
     },
   ];
 
