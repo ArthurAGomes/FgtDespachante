@@ -26,12 +26,12 @@ function Carrosel() {
     {
       imagem: licenciamento,
       titulo: "Licenciamento em dia",
-      descricao: "Mantenha sua documentação regularizada conosco.",
+      descricao: "",
     },
     {
       imagem: liberacao,
       titulo: "Liberação de veículo apreendido",
-      descricao: "Processos simplificados e sem complicações.",
+      descricao: "",
     },
     {
       imagem: cadastro,
@@ -41,17 +41,17 @@ function Carrosel() {
     {
       imagem: primeiroEmplacamento,
       titulo: "Primeiro Emplacamento",
-      descricao: "Cuidamos de tudo para você.",
+      descricao: "",
     },
     {
       imagem: atpve,
       titulo: "ATPV-E",
-      descricao: "Assinatura digital descomplicada.",
+      descricao: "",
     },
     {
       imagem: transferencia,
       titulo: "Transferência de Nome",
-      descricao: "Cuidamos de toda a documentação.",
+      descricao: "",
     },
   ];
 
