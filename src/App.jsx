@@ -33,7 +33,7 @@ function App() {
 
             {/* Rota principal */}
             <Route
-              path="/index"
+              path="/"
               element={
                 <>
                   {/* Alert */}

@@ -45,7 +45,7 @@ function AlterarMensagem() {
 
 const handleLogout = () => {
   localStorage.removeItem("authToken"); // Remove o token do armazenamento local
-  navigate("/index"); // Redireciona o usuário para a página inicial
+  navigate("/"); // Redireciona o usuário para a página inicial
 };
 
   return (

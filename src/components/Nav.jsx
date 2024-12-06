@@ -15,7 +15,7 @@ function Nav() {
     <header className="sticky top-0 z-20 w-full bg-white border-b border-gray-200 shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-5 py-4 md:px-10">
         
-        <a href="/index" className="flex items-center">
+        <a href="/" className="flex items-center">
           <img
             src={logo}
             alt="FGT Despachante"

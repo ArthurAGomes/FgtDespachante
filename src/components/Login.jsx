@@ -30,7 +30,7 @@ function Login() {
   };
 
   const handleBack = () => {
-    navigate("/index"); 
+    navigate("/"); 
   };
 
   return (
