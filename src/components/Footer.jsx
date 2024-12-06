@@ -1,4 +1,5 @@
 import { FaInstagram, FaFacebookF, FaWhatsapp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -8,7 +9,6 @@ function Footer() {
           <h3 className="text-2xl font-bold mb-2">Horários de Trabalho</h3>
           <p className="text-sm">Segunda a Sexta: 9h - 18h</p>
         </div>
-
         <div className="flex space-x-6 mb-4 md:mb-0">
           <a
             href="https://www.instagram.com/fgtdespachante/"
@@ -37,7 +37,6 @@ function Footer() {
             <FaWhatsapp className="text-2xl" />
           </a>
         </div>
-
         <div className="text-center md:text-right">
           <p className="text-sm">
             Desenvolvido por{" "}
@@ -51,6 +50,15 @@ function Footer() {
             </a>
           </p>
           <p className="text-sm">© 2024 Todos os direitos reservados.</p>
+        </div>
+
+        <div className="text-center md:text-right mt-4">
+          <Link
+            to="/login"
+            className="text-customOrange hover:underline text-sm"
+          >
+            ADM
+          </Link>
         </div>
       </div>
     </footer>

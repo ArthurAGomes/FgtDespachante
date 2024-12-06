@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Alert from "./components/Alert"; // Importe o componente Alert
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
 import Carrosel from "./components/Carrosel";
 import About from "./components/About";
@@ -10,43 +10,56 @@ import Contato from "./components/Contato";
 import Location from "./components/Location";
 import Footer from "./components/Footer";
 
+// Páginas específicas
+import Login from "./components/Login"; // Componente de Login
+import AlterarMensagem from "./components/AlterarMensagem"; // Componente para alterar a mensagem
+
 function App() {
-  const [isAlertOpen, setIsAlertOpen] = useState(true); // Controla a exibição do alerta
-
-  // Função para fechar o alerta
-  const closeAlert = () => {
-    setIsAlertOpen(false);
-  };
-
   return (
-    <div>
-      <Nav />
-      <main>
-        <section id="inicio">
-          <Carrosel />
-        </section>
-        <section id="quem-somos">
-          <About />
-          <Parceiros />
-        </section>
-        <section id="servicos">
-          <Servicos />
-        </section>
-        <section id="formularios">
-          <Forms />
-        </section>
-        <section id="contato">
-          <Contato />
-        </section>
-        <section id="localizacao">
-          <Location />
-        </section>
-        <Footer />
-      </main>
+    <Router>
+      <div>
+        <Nav />
+        <main>
+          {/* Define todas as rotas dentro da estrutura do Router */}
+          <Routes>
+            {/* Rota de Login */}
+            <Route path="/login" element={<Login />} />
 
-      {/* Exibe o alerta no topo */}
-      <Alert isOpen={isAlertOpen} />
-    </div>
+            {/* Rota de Alterar Mensagem */}
+            <Route path="/alterar-mensagem" element={<AlterarMensagem />} />
+
+            {/* Rota principal */}
+            <Route
+              path="/"
+              element={
+                <>
+                  <section id="inicio">
+                    <Carrosel />
+                  </section>
+                  <section id="quem-somos">
+                    <About />
+                    <Parceiros />
+                  </section>
+                  <section id="servicos">
+                    <Servicos />
+                  </section>
+                  <section id="formularios">
+                    <Forms />
+                  </section>
+                  <section id="contato">
+                    <Contato />
+                  </section>
+                  <section id="localizacao">
+                    <Location />
+                  </section>
+                </>
+              }
+            />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
