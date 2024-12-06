@@ -10,11 +10,14 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
-      });
+      const response = await fetch(
+        "https://backend-fgt.onrender.com/api/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password }),
+        }
+      );
 
       if (!response.ok) throw new Error("Login falhou.");
 
@@ -27,7 +30,7 @@ function Login() {
   };
 
   const handleBack = () => {
-    navigate("/"); // Redireciona para a página inicial
+    navigate("/index"); 
   };
 
   return (

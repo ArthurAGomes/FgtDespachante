@@ -23,14 +23,17 @@ function AlterarMensagem() {
     e.preventDefault();
     try {
       const token = localStorage.getItem("authToken");
-      const response = await fetch("/api/mensagem", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ title, mensagem }),
-      });
+      const response = await fetch(
+        "https://backend-fgt.onrender.com/api/mensagem",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ title, mensagem }),
+        }
+      );
 
       if (!response.ok) throw new Error("Erro ao salvar.");
 
@@ -40,26 +43,10 @@ function AlterarMensagem() {
     }
   };
 
-  // Função para lidar com o logout
-  const handleLogout = async () => {
-    try {
-      const token = localStorage.getItem("authToken");
-      const response = await fetch("/api/logout", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      if (!response.ok) throw new Error("Erro ao sair.");
-
-      localStorage.removeItem("authToken"); // Remove o token de autenticação
-      navigate("/"); // Redireciona para a página de login
-    } catch (error) {
-      console.error("Erro ao fazer logout:", error);
-    }
-  };
+const handleLogout = () => {
+  localStorage.removeItem("authToken"); // Remove o token do armazenamento local
+  navigate("/index"); // Redireciona o usuário para a página inicial
+};
 
   return (
     <div className="p-6 max-w-lg mx-auto bg-white rounded-lg shadow-lg">
