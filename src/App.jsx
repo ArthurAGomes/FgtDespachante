@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
 import Carrosel from "./components/Carrosel";
@@ -9,12 +9,15 @@ import Forms from "./components/Contratos";
 import Contato from "./components/Contato";
 import Location from "./components/Location";
 import Footer from "./components/Footer";
+import Alert from "./components/Alert"; // Importando o Alert
 
 // Páginas específicas
 import Login from "./components/Login"; // Componente de Login
 import AlterarMensagem from "./components/AlterarMensagem"; // Componente para alterar a mensagem
 
 function App() {
+  const [isAlertOpen, setIsAlertOpen] = useState(true); // Controle do Alert
+
   return (
     <Router>
       <div>
@@ -33,6 +36,10 @@ function App() {
               path="/"
               element={
                 <>
+                  {/* Alert */}
+                  <Alert isOpen={isAlertOpen} />
+
+                  {/* Seções da página principal */}
                   <section id="inicio">
                     <Carrosel />
                   </section>

@@ -37,6 +37,14 @@ function Footer() {
             <FaWhatsapp className="text-2xl" />
           </a>
         </div>
+        <div className="text-center md:text-right mt-4">
+          <Link
+            to="/login"
+            className="text-customOrange hover:underline text-sm"
+          >
+            ADM
+          </Link>
+        </div>
         <div className="text-center md:text-right">
           <p className="text-sm">
             Desenvolvido por{" "}
@@ -50,15 +58,6 @@ function Footer() {
             </a>
           </p>
           <p className="text-sm">© 2024 Todos os direitos reservados.</p>
-        </div>
-
-        <div className="text-center md:text-right mt-4">
-          <Link
-            to="/login"
-            className="text-customOrange hover:underline text-sm"
-          >
-            ADM
-          </Link>
         </div>
       </div>
     </footer>
