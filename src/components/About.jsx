@@ -31,14 +31,14 @@ function About() {
           </h2>
 
           {/* Descrição */}
-          <p className="text-lg leading-relaxed text-gray-700 text-justify">
+          <p className="text-lg leading-relaxed text-gray-700 md:text-justify">
             Na FGT, somos especialistas em descomplicar e agilizar toda a
             documentação necessária para veículos. Com mais de uma década de
             experiência, oferecemos serviços completos que garantem praticidade,
             segurança e tranquilidade para nossos clientes.
           </p>
 
-          <p className="text-lg leading-relaxed text-gray-700 text-justify">
+          <p className="text-lg leading-relaxed text-gray-700 md:text-justify">
             Nosso compromisso é com a sua satisfação. Atuamos com transparência,
             eficiência e um atendimento personalizado para atender suas
             necessidades. Cuidamos de tudo, desde transferências e
@@ -46,7 +46,7 @@ function About() {
             emplacamentos.
           </p>
 
-          <p className="text-lg leading-relaxed text-gray-700 text-justify">
+          <p className="text-lg leading-relaxed text-gray-700 md:text-justify">
             Seja para resolver pendências ou prevenir futuros problemas, a FGT
             está ao seu lado para oferecer soluções rápidas e confiáveis.
             Junte-se aos nossos clientes satisfeitos e confie em quem entende do

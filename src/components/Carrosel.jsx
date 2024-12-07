@@ -58,10 +58,10 @@ function Carrosel() {
   ];
 
   return (
-    <div className="w-full h-[550px] bg-gray-100">
+    <div className="w-full h-[450px] sm:h-[550px] bg-gray-100">
       <Swiper
         modules={[Autoplay, Navigation]}
-        slidesPerView={1}
+        slidesPerView={1} // Sempre 1 slide por vez
         loop={true}
         autoplay={{
           delay: 7000,
@@ -81,15 +81,15 @@ function Carrosel() {
               className="w-full h-full object-cover"
             />
             {slide.principal ? (
-              <div className="absolute inset-0 flex items-center pl-6 md:pl-16 lg:pl-24 bg-gradient-to-r from-black/60 to-transparent">
-                <div className="text-white max-w-2xl space-y-6">
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              <div className="absolute inset-0 flex flex-col justify-center items-center lg:items-start text-center lg:text-left px-6 sm:px-16 lg:pl-24 lg:pr-16 bg-gradient-to-r from-black/70 via-black/50 to-transparent">
+                <div className="text-white max-w-2xl lg:max-w-xl space-y-4 sm:space-y-6">
+                  <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight">
                     {slide.titulo}
                   </h1>
-                  <p className="mt-4 text-lg md:text-xl leading-relaxed">
+                  <p className="mt-2 text-sm sm:text-lg md:text-xl leading-relaxed">
                     {slide.descricao}
                   </p>
-                  <div className="mt-6 flex space-x-4">
+                  <div className="mt-6 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                     <Link
                       to={slide.link}
                       smooth={true}
@@ -112,29 +112,30 @@ function Carrosel() {
                 </div>
               </div>
             ) : (
-              <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black/60 via-transparent to-transparent">
-                <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-8 bg-gradient-to-r from-black/70 via-black/50 to-transparent">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
                   {slide.titulo}
                 </h2>
-                <p className="mt-2 text-lg text-white">{slide.descricao}</p>
+                <p className="mt-2 text-sm sm:text-base text-white leading-snug">
+                  {slide.descricao}
+                </p>
               </div>
             )}
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* Botões de navegação - Usando Lucide Icons */}
-      <button className="custom-prev hidden md:flex absolute top-1/2 left-4 z-10 transform -translate-y-1/2 bg-customDarkBlue text-white p-4 rounded-full shadow-lg hover:bg-gray-700 text-xl">
-        <ArrowLeft size={30} /> {/* Ícone de seta para a esquerda */}
+      {/* Botões de navegação */}
+      <button className="custom-prev hidden sm:flex absolute top-1/2 left-4 z-10 transform -translate-y-1/2 bg-customDarkBlue text-white p-3 lg:p-4 rounded-full shadow-lg hover:bg-gray-700">
+        <ArrowLeft size={30} />
       </button>
-      <button className="custom-next hidden md:flex absolute top-1/2 right-4 z-10 transform -translate-y-1/2 bg-customDarkBlue text-white p-4 rounded-full shadow-lg hover:bg-gray-700 text-xl">
-        <ArrowRight size={30} /> {/* Ícone de seta para a direita */}
+      <button className="custom-next hidden sm:flex absolute top-1/2 right-4 z-10 transform -translate-y-1/2 bg-customDarkBlue text-white p-3 lg:p-4 rounded-full shadow-lg hover:bg-gray-700">
+        <ArrowRight size={30} />
       </button>
     </div>
   );
 }
 
-// Componente de imagem com fade-in
 function FadeInImage({ src, alt, className }) {
   const [isLoaded, setIsLoaded] = useState(false);
 
