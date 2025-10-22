@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import logo from "../assets/img/fgt-logo.png"; // Importa a logo
+import { X } from "lucide-react";
 
 const Alert = ({ isOpen }) => {
   const [aviso, setAviso] = useState(""); // Mensagem
@@ -32,31 +32,57 @@ const Alert = ({ isOpen }) => {
   useEffect(() => {
     if (isOpen && aviso) {
       toast.info(
-        <div className="flex flex-col items-center">
-          <img
-            src={logo}
-            alt="Logo"
-            className="h-12 sm:h-12 object-contain rounded-md"
-          />
-          <p className="text-lg font-sans font-bold text-black text-center mb-2">
-            📢 {titleAviso}
+        <div className="p-4">
+          {/* Título simples */}
+          <h3 className="text-sm font-semibold text-gray-900 mb-2">
+            {titleAviso}
+          </h3>
+          
+          {/* Mensagem */}
+          <p className="text-sm text-gray-700 leading-relaxed">
+            {aviso}
           </p>
-          <p className="text-sm text-gray-800 text-center">{aviso}</p>
         </div>,
         {
           position: "top-center",
-          autoClose: 10000,
-          hideProgressBar: false,
+          autoClose: 6000,
+          hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
+          className: "custom-toast",
+          toastClassName: "bg-white border border-gray-200 rounded-lg shadow-md",
+          bodyClassName: "p-0",
         }
       );
     }
-  }, [isOpen, aviso, titleAviso]); // Certifique-se de atualizar quando titleAviso mudar
+  }, [isOpen, aviso, titleAviso]);
 
-  return <ToastContainer />;
+  return (
+    <ToastContainer
+      position="top-center"
+      autoClose={6000}
+      hideProgressBar={true}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      className="custom-toast-container"
+      toastClassName="custom-toast-item"
+      bodyClassName="custom-toast-body"
+      closeButton={({ closeToast }) => (
+        <button
+          onClick={closeToast}
+          className="w-5 h-5 flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors"
+        >
+          <X className="w-4 h-4" />
+        </button>
+      )}
+    />
+  );
 };
 
 export default Alert;

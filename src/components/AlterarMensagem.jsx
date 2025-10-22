@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // Importa o hook para navegação
+import { useNavigate } from "react-router-dom";
+import { Save, LogOut, MessageSquare, AlertCircle, CheckCircle } from "lucide-react";
 
 function AlterarMensagem() {
   const [title, setTitle] = useState("");
@@ -49,67 +50,119 @@ const handleLogout = () => {
 };
 
   return (
-    <div className="p-6 max-w-lg mx-auto bg-white rounded-lg shadow-lg">
-      <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-        Alteração de Mensagem
-      </h1>
+    <div className="min-h-screen bg-gradient-primary flex items-center justify-center p-4 relative overflow-hidden">
+      {/* Elementos decorativos de fundo */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-3xl animate-float" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse-soft"></div>
+      </div>
 
-      {success && (
-        <p
-          className={`text-center py-2 px-4 mb-4 rounded-md ${
-            success.includes("sucesso")
-              ? "bg-green-200 text-green-800"
-              : "bg-red-200 text-red-800"
-          }`}
-        >
-          {success}
-        </p>
-      )}
+      <div className="relative z-10 w-full max-w-2xl">
+        {/* Card Principal */}
+        <div className="glass-card rounded-3xl p-8 shadow-strong animate-scale-in">
+          {/* Header */}
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-primary-500 to-ocean-500 rounded-2xl mb-4 shadow-glow">
+              <MessageSquare className="w-8 h-8 text-white" />
+            </div>
+            <h1 className="text-3xl font-bold text-white mb-2">
+              Alteração de Mensagem
+            </h1>
+            <p className="text-white/80 text-sm">
+              Gerencie as mensagens de alerta do site
+            </p>
+          </div>
 
-      <form onSubmit={handleSubmit}>
-        <div className="mb-6">
-          <label className="block text-gray-700 font-semibold mb-2">
-            Título
-          </label>
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            className="w-full border-2 border-gray-300 rounded-lg p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Digite o título"
-          />
+          {/* Mensagem de Sucesso/Erro */}
+          {success && (
+            <div className={`mb-6 rounded-xl p-4 animate-fade-in ${
+              success.includes("sucesso")
+                ? "bg-green-500/20 border border-green-500/30"
+                : "bg-red-500/20 border border-red-500/30"
+            }`}>
+              <div className="flex items-center gap-3">
+                <div className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${
+                  success.includes("sucesso") ? "bg-green-500/30" : "bg-red-500/30"
+                }`}>
+                  {success.includes("sucesso") ? (
+                    <CheckCircle className="w-4 h-4 text-green-200" />
+                  ) : (
+                    <AlertCircle className="w-4 h-4 text-red-200" />
+                  )}
+                </div>
+                <p className={`text-sm ${
+                  success.includes("sucesso") ? "text-green-200" : "text-red-200"
+                }`}>
+                  {success}
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Formulário */}
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Campo Título */}
+            <div className="space-y-2">
+              <label className="block text-white/90 text-sm font-medium">
+                Título
+              </label>
+              <input
+                type="text"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                className="input-modern bg-white/10 border-white/20 text-white placeholder-white/50 focus:bg-white/20 focus:border-white/40"
+                placeholder="Digite o título da mensagem"
+                required
+              />
+            </div>
+
+            {/* Campo Mensagem */}
+            <div className="space-y-2">
+              <label className="block text-white/90 text-sm font-medium">
+                Mensagem
+              </label>
+              <textarea
+                value={mensagem}
+                onChange={(e) => setMensagem(e.target.value)}
+                className="input-modern bg-white/10 border-white/20 text-white placeholder-white/50 focus:bg-white/20 focus:border-white/40 resize-none"
+                placeholder="Digite a mensagem de alerta"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+
+            {/* Botões */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <button
+                type="submit"
+                className="flex-1 btn-primary bg-gradient-to-r from-white/20 to-white/10 border border-white/30 text-white hover:from-white/30 hover:to-white/20"
+              >
+                <div className="flex items-center justify-center gap-2">
+                  <Save className="w-5 h-5" />
+                  <span>Salvar Alerta</span>
+                </div>
+              </button>
+
+              <button
+                type="button"
+                onClick={handleLogout}
+                className="flex-1 flex items-center justify-center gap-2 py-3 px-6 bg-red-500/20 border border-red-500/30 text-red-200 rounded-xl hover:bg-red-500/30 transition-all duration-300"
+              >
+                <LogOut className="w-5 h-5" />
+                <span>Sair</span>
+              </button>
+            </div>
+          </form>
+
+          {/* Footer */}
+          <div className="mt-8 pt-6 border-t border-white/20">
+            <p className="text-white/60 text-xs text-center">
+              © 2024 FGT Despachante. Todos os direitos reservados.
+            </p>
+          </div>
         </div>
-
-        <div className="mb-6">
-          <label className="block text-gray-700 font-semibold mb-2">
-            Mensagem
-          </label>
-          <textarea
-            value={mensagem}
-            onChange={(e) => setMensagem(e.target.value)}
-            className="w-full border-2 border-gray-300 rounded-lg p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Digite a mensagem"
-            rows="5"
-          ></textarea>
-        </div>
-
-        <div className="flex justify-between items-center">
-          <button
-            type="submit"
-            className="bg-blue-600 text-white py-2 px-6 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all duration-300"
-          >
-            Salvar Alerta
-          </button>
-
-          <button
-            type="button"
-            onClick={handleLogout}
-            className="bg-red-600 text-white py-2 px-6 rounded-lg text-lg font-semibold hover:bg-red-700 transition-all duration-300"
-          >
-            Sair
-          </button>
-        </div>
-      </form>
+      </div>
     </div>
   );
 }

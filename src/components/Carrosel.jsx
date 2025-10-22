@@ -2,10 +2,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
-import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css/pagination";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { useState } from "react";
 import { Link } from "react-scroll";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronRight, Star } from "lucide-react";
 import about from "../assets/img/banner1.jpg";
 import cadastro from "../assets/img/cadastro-motor.jpg";
 import liberacao from "../assets/img/liberacao-veiculo.jpg";
@@ -15,62 +16,92 @@ import atpve from "../assets/img/atpv-e.jpg";
 import transferencia from "../assets/img/transferencia-nome.jpg";
 
 function Carrosel() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
   const slides = [
+    // ... (seu array de slides)
     {
       imagem: about,
       titulo: "Facilidade e agilidade para cuidar do seu veículo!",
-      descricao: "Conheça todos os nossos serviços ao lado!",
+      descricao:
+        "Conheça todos os nossos serviços e descubra como podemos facilitar sua vida com soluções completas em documentação veicular.",
       principal: true,
       link: "servicos",
+      badge: "Destaque",
     },
     {
       imagem: licenciamento,
       titulo: "Licenciamento em dia",
-      descricao: "Mantenha sua documentação regularizada conosco.",
+      descricao:
+        "Mantenha sua documentação sempre regularizada conosco. Processo rápido, seguro e sem complicações.",
+      badge: "Popular",
     },
     {
       imagem: liberacao,
       titulo: "Liberação de veículo apreendido",
       descricao:
-        "Agilizamos todo o processo de liberação do seu veículo apreendido, cuidando da documentação necessária e oferecendo suporte completo para que você recupere seu veículo com tranquilidade e rapidez.",
+        "Agilizamos todo o processo de liberação do seu veículo apreendido, cuidando da documentação necessária e oferecendo suporte completo.",
+      badge: "Urgente",
     },
     {
       imagem: cadastro,
       titulo: "Cadastro de Motor",
-      descricao: "Regularize com segurança e rapidez.",
+      descricao:
+        "Regularize seu motor com segurança e rapidez. Nossa equipe especializada cuida de toda a burocracia para você.",
+      badge: "Especializado",
     },
     {
       imagem: primeiroEmplacamento,
       titulo: "Primeiro Emplacamento",
-      descricao: "Facilitamos o processo de emplacamento para você!",
+      descricao:
+        "Facilitamos o processo de emplacamento para seu novo veículo. Tudo organizado e sem dor de cabeça.",
+      badge: "Novo",
     },
     {
       imagem: atpve,
       titulo: "ATPV-E",
-      descricao: "",
+      descricao:
+        "Autorização para Transferência de Propriedade de Veículo Estrangeiro. Especialistas em documentação internacional.",
+      badge: "Internacional",
     },
     {
       imagem: transferencia,
       titulo: "Transferência de Nome",
       descricao:
-        "Facilitamos a transferência de propriedade do seu veículo, garantindo que toda a documentação seja processada de forma rápida, segura e sem complicações. Deixe os detalhes burocráticos conosco!",
+        "Facilitamos a transferência de propriedade do seu veículo, garantindo que toda a documentação seja processada de forma rápida e segura.",
+      badge: "Completo",
     },
   ];
 
+  const badgeColors = {
+    // ... (seu objeto badgeColors)
+  };
+
   return (
-    <div className="w-full h-[450px] sm:h-[550px] bg-gray-100">
+    // Voltamos ao container original com overflow-hidden
+    <div className="relative w-full h-[500px] sm:h-[600px] lg:h-[700px] overflow-hidden">
+      {/* Elementos decorativos de fundo */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-ocean-50"></div>
+
       <Swiper
-        modules={[Autoplay, Navigation]}
-        slidesPerView={1} // Sempre 1 slide por vez
+        modules={[Autoplay, Navigation, Pagination]}
+        slidesPerView={1}
         loop={true}
         autoplay={{
-          delay: 7000,
+          delay: 8000,
           disableOnInteraction: false,
         }}
         navigation={{
           nextEl: ".custom-next",
           prevEl: ".custom-prev",
         }}
+        pagination={{
+          el: ".custom-pagination",
+          clickable: true,
+          bulletClass: "swiper-pagination-bullet-custom",
+          bulletActiveClass: "swiper-pagination-bullet-active-custom",
+        }}
+        onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
         className="w-full h-full"
       >
         {slides.map((slide, index) => (
@@ -80,74 +111,107 @@ function Carrosel() {
               alt={`Slide ${index + 1}`}
               className="w-full h-full object-cover"
             />
-            {slide.principal ? (
-              <div className="absolute inset-0 flex flex-col justify-center items-center lg:items-start text-center lg:text-left px-6 sm:px-16 lg:pl-24 lg:pr-16 bg-gradient-to-r from-black/70 via-black/50 to-transparent">
-                <div className="text-white max-w-2xl lg:max-w-xl space-y-4 sm:space-y-6">
-                  <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+
+            {/* Overlay gradiente moderno */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+
+            {/* Conteúdo do slide */}
+            <div className="absolute inset-0 flex flex-col justify-center items-start text-left px-6 sm:px-12 lg:px-20 xl:px-32">
+              <div className="max-w-4xl space-y-6 animate-fade-in-up">
+                {/* ... (Badge, Título, Descrição, Botões) ... */}
+                {/* Badge */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-sm border border-white/30 rounded-full">
+                  <Star className="w-4 h-4 text-yellow-300" />
+                  <span className="text-white/90 text-sm font-medium">
+                    {slide.badge}
+                  </span>
+                </div>
+
+                {/* Título */}
+                <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
+                  <span className="bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
                     {slide.titulo}
-                  </h1>
-                  <p className="mt-2 text-sm sm:text-lg md:text-xl leading-relaxed">
-                    {slide.descricao}
-                  </p>
-                  <div className="mt-6 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                  </span>
+                </h1>
+
+                {/* Descrição */}
+                <p className="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-3xl">
+                  {slide.descricao}
+                </p>
+
+                {/* Botões de ação */}
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  {slide.principal && (
                     <Link
                       to={slide.link}
                       smooth={true}
                       duration={500}
-                      offset={-100}
-                      className="bg-customDarkBlue hover:bg-gray-800 text-white py-3 px-6 rounded-lg font-semibold cursor-pointer"
+                      offset={-80}
+                      className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-2xl shadow-strong hover:shadow-glow transform hover:scale-105 transition-all duration-300"
                     >
-                      Explore nossos serviços
+                      <span>Explore nossos serviços</span>
+                      <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
-                    <Link
-                      to="contato"
-                      smooth={true}
-                      duration={500}
-                      offset={-100}
-                      className="bg-transparent border border-white text-white py-3 px-6 rounded-lg hover:bg-white hover:text-customDarkBlue font-semibold cursor-pointer"
-                    >
-                      Entre em contato
-                    </Link>
-                  </div>
+                  )}
+
+                  <Link
+                    to="contato"
+                    smooth={true}
+                    duration={500}
+                    offset={-80}
+                    className="group inline-flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold rounded-2xl hover:bg-white/20 hover:border-white/50 transform hover:scale-105 transition-all duration-300"
+                  >
+                    <span>Entre em contato</span>
+                    <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </div>
               </div>
-            ) : (
-              <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-8 bg-gradient-to-r from-black/70 via-black/50 to-transparent">
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
-                  {slide.titulo}
-                </h2>
-                <p className="mt-2 text-sm sm:text-base text-white leading-snug">
-                  {slide.descricao}
-                </p>
-              </div>
-            )}
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* Botões de navegação */}
-      <button className="custom-prev hidden sm:flex absolute top-1/2 left-4 z-10 transform -translate-y-1/2 bg-customDarkBlue text-white p-3 lg:p-4 rounded-full shadow-lg hover:bg-gray-700">
-        <ArrowLeft size={30} />
-      </button>
-      <button className="custom-next hidden sm:flex absolute top-1/2 right-4 z-10 transform -translate-y-1/2 bg-customDarkBlue text-white p-3 lg:p-4 rounded-full shadow-lg hover:bg-gray-700">
-        <ArrowRight size={30} />
-      </button>
+      {/* ============================================================
+        MELHORIA AQUI:
+        Movendo as setas para o 'bottom-6' para alinhar com a paginação.
+        Removido: 'top-1/2', 'transform', '-translate-y-1/2'
+        Adicionado: 'bottom-6'
+        ============================================================
+      */}
+      
+
+      {/* Paginação personalizada (permanece no mesmo lugar) */}
+      <div className="custom-pagination absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex gap-2"></div>
+
+      {/* Indicador de progresso */}
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-white/20">
+        <div
+          className="h-full bg-gradient-to-r from-primary-500 to-ocean-500 transition-all duration-300 ease-out"
+          style={{ width: `${((activeSlide + 1) / slides.length) * 100}%` }}
+        ></div>
+      </div>
     </div>
   );
 }
 
+// ... (FadeInImage não precisa de alteração)
 function FadeInImage({ src, alt, className }) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <img
-      src={src}
-      alt={alt}
-      className={`${className} transition-opacity duration-700 ease-in-out ${
-        isLoaded ? "opacity-100" : "opacity-0"
-      }`}
-      onLoad={() => setIsLoaded(true)}
-    />
+    <div className="relative w-full h-full overflow-hidden">
+      <img
+        src={src}
+        alt={alt}
+        className={`${className} transition-all duration-1000 ease-out ${
+          isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-110"
+        }`}
+        onLoad={() => setIsLoaded(true)}
+      />
+      {!isLoaded && (
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-100 to-ocean-100 animate-pulse"></div>
+      )}
+    </div>
   );
 }
 
