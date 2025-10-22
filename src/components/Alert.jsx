@@ -11,7 +11,7 @@ const Alert = ({ isOpen }) => {
   const obterAviso = async () => {
     try {
       const response = await fetch(
-        "https://backend-fgt.onrender.com/api/aviso"
+        "https://backend-fgt.vercel.app/api/aviso"
       ); // Ajuste o URL conforme necessário
       const data = await response.json();
 

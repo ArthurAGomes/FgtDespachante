@@ -24,7 +24,7 @@ function AlterarMensagem() {
     try {
       const token = localStorage.getItem("authToken");
       const response = await fetch(
-        "https://backend-fgt.onrender.com/api/mensagem",
+        "https://backend-fgt.vercel.app/api/mensagem",
         {
           method: "POST",
           headers: {
