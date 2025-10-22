@@ -11,7 +11,7 @@ function Login() {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://backend-fgt.vercel.app//api/login",
+        "https://backend-fgt.vercel.app/api/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
